@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="icon" type="image/x-icon" href="../img/faveicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* .loader-circle-99 {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .loader-circle-99 .center {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 48%;
+        left: 48%;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ffb302;
+        animation: anm-loader-circle-99 5s infinite linear;
+    }
+
+    .loader-circle-99 .circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #ffb302;
+        border-radius: 50%;
+        opacity: 0;
+        animation: anm2-loader-circle-99 2.5s infinite linear;
+    }
+
+    .loader-circle-99 .circle:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .loader-circle-99 .circle:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .loader-circle-99 .circle:nth-child(3) {
+        animation-delay: 1s;
+    }
+
+    .loader-circle-99 .circle:nth-child(4) {
+        animation-delay: 1.5s;
+    }
+
+    @keyframes anm-loader-circle-99 {
+        0% {
+            transform: scale3d(1, 1, 1);
+        }
+
+        50% {
+            transform: scale3d(1.5, 1.5, 1.5);
+        }
+
+        100% {
+            transform: scale3d(1, 1, 1);
+        }
+    }
+
+    @keyframes anm2-loader-circle-99 {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        25% {
+            transform: scale(0);
+            opacity: 0.5;
+        }
+
+        50% {
+            transform: scale(0.5);
+            opacity: 1;
+        }
+
+        75% {
+            transform: scale(1);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+
+    .lodder--wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #ffff;
+        z-index: 999999;
+    }
+
+    .lodder--wrapper .center-body {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    } */
+    a.scrollDawn {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 90%;
+    }
+
+
+    .box span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+        transform: rotate(45deg);
+        margin: -10px;
+        animation: animate 2s infinite;
+    }
+
+    .box span:nth-child(2) {
+        animation-delay: -0.2s;
+    }
+
+    .box span:nth-child(3) {
+        animation-delay: -0.4s;
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            transform: rotate(45deg) translate(-20px, -20px);
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            transform: rotate(45deg) translate(20px, 20px);
+        }
+    }
+</style>
+
+<body class="font-[Poppins]">
+    <!-- header -->
+    <header class="shadow-lg flex items-center">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="header-main flex items-center justify-between py-5 w-full">
+                <div class="logo-header w-48 cursor-pointer">
+                    <a href="">
+                        <img src="../img/logo.png" alt="img" class="">
+                    </a>
+                </div>
+                <nav class="md:static md:min-h-fit md:w-auto absolute z-50 bg-white min-h-[60vh] left-0 top-[-100%]
+                     w-full flex items-center px-5 justify-center nav-links">
+                    <ul class="flex md:items-center md:gap-[6vw] md:flex-row flex-col gap-8">
+                        <li class=""><a href="" class="capitalize hover:text-yellow-300">home</a></li>
+                        <li class=""><a href="" class="capitalize hover:text-yellow-300">service</a></li>
+                        <li class=""><a href="" class="capitalize hover:text-yellow-300">about us</a></li>
+                        <li class=""><a href="" class="capitalize hover:text-yellow-300">contact us</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="">
+                <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
+                    class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+        </div>
+
+    </header>
+    <!-- header -->
+
+
+    <!-- banner section -->
+    <section class="bg-[url('../img/hero_4.jpg')] w-full bg-no-repeat bg-cover relative before:absolute before::content-[''] 
+        before:top-0 before:right-0 before:bottom-0 before:left-0 before:bg-[#00000073] py-44 sm:py-80  banner">
+        <div class="container mx-auto w-full h-full ">
+            <div class="w-full h-full flex items-center justify-center flex-col z-10 relative">
+                <p class="md:text-2xl text-xl text-white pb-3">ΚΑΛΩΣΗΡΘΕΣ ΣΤΟ</p>
+                <h1 class="md:text-7xl text-4xl capitalize font-semibold text-yellow-300">otoixnua</h1>
+            </div>
+            <a href="#gambl" class="scrollDawn">
+                <div class="box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- banner section -->
+
+    <!-- gambler -->
+    <section class="py-20" id="gambl">
+        <div class="container mx-auto px-3 sm:px-0">
+            <div class="md:flex gap-6 justify-between block">
+                <div class="text md:w-2/4 lg:w-2/5 w-full">
+                    <div class="content h-full flex flex-col items-start justify-center">
+                        <h2 class="text-yellow-300 md:text-4xl pb-2 text-3xl">Καλώς ήρθατε στο otoixnua.com</h2>
+                        <p class="text-xl">τον απόλυτο προορισμό για όλες τις ανάγκες σύγκρισης σας τα ξενοδοχεία
+                            και τα καζίνο σας! Εάν είστε άπληστος τζογαδόρος ή αναζητητής αναψυχής που αναζητώντας την
+                            τέλεια απόδραση στη μαγευτική γη της Ελλάδας, ήρθατε στο σωστό μέρος.</p>
+                    </div>
+                </div>
+                <div class="imgg md:w-2/4 lg:w-2/5 w-full mt-7 md:mt-0">
+                    <img src="../img/banner1.jpg" alt="..." class="h-96">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gambler -->
+
+
+    <!-- best palce -->
+    <section
+        class="bg-[url('../img/Prive-Panorama.jpg')] w-full bg-no-repeat bg-cover relative before:absolute before::content-[''] before:top-0 before:right-0 before:bottom-0 before:left-0 before:bg-[#000000ba] py-5 sm:py-40 bg-fixed banner">
+        <div class="container mx-auto w-full h-full ">
+            <div class="w-full h-full z-10 relative">
+                <p class="text-xl text-white pb-3 text-center max-w-7xl w-full m-auto">Κατανοούμε ότι η επιλογή του
+                    ιδανικού καζίνο ξενοδοχείου
+                    μπορεί να είναι μια πρόκληση, με τόσες πολλές προσφορές στα γραφικά ελληνικά νησιά και τις ζωντανές
+                    πόλεις. Γιατί; Αυτός είναι ο λόγος που δημιουργήσαμε το otoixnua.com, μια ολοκληρωμένη πλατφόρμα που
+                    έχει σχεδιαστεί για να κάνετε τη διαδικασία λήψης αποφάσεων σας αβίαστη και ευχάριστη.</p>
+            </div>
+        </div>
+    </section>
+    <!-- best palce -->
+
+    <!-- footer -->
+    <footer class="bg-black py-24">
+        <div class="container md:mx-auto w-full h-full sm:px-4 sm:max-w-full md:px-3">
+            <div class="footer-wrapper flex flex-wrap">
+                <div
+                    class="md:w-1/4 sm:w-2/4 w-full md:mb-0 sm:mb-10 md:pr-3 text-center md:text-left sm:text-left mb-6">
+                    <div class="heading mb-10">
+                        <h4 class="text-yellow-300 font-medium">ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ</h4>
+                    </div>
+                    <div class="logo ">
+                        <a href="" class="cursor-pointer flex justify-center sm:justify-start">
+                            <img src="../img/whlogo.png" alt="img" class="w-48">
+                        </a>
+                    </div>
+                    <div class="social">
+                        <div class="social-logo text-white">
+                            <i class="fa fa-twitter text-white" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="md:w-1/4 sm:w-2/4 w-full md:mb-0 sm:mb-10 md:pr-3 mb:0 text-center md:text-left sm:text-left mb-6">
+                    <div class="heading mb-10">
+                        <h4 class="text-yellow-300 font-medium">ΜΕΝΟΎ</h4>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Σπίτι</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Καζίνο Regency</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Club Hotel Casino Loutraki</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Club Hotel Casino Loutraki</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Πόρτο Καρράς</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Καζίνο Κέρκυρας</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Καζίνο Ρόδου</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Καζίνο Σύρου</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Σχετικά με εμάς</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-white hover:text-yellow-300">Επικοινωνήστε μαζί μας</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="md:w-1/4 sm:w-2/4 w-full md:mb-0 sm:mb-10 md:pr-3 text-center md:text-left sm:text-left mb-6">
+                    <div class="heading mb-10">
+                        <h4 class="text-yellow-300 font-medium">ΑΣΦΆΛΕΙΑ ΙΣΤΟΣΕΛΊΔΑΣ</h4>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Πολιτική απορρήτου</a>
+                            </li>
+                            <li class="pb-3">
+                                <a href="" class="text-white hover:text-yellow-300">Οροι και Προϋποθέσεις</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="md:w-1/4 sm:w-2/4 w-full md:mb-0 sm:mb-10 md:pl-0 xl:pl-9 mb:0 text-center md:text-left sm:text-left">
+                    <div class="heading mb-10">
+                        <h4 class="text-yellow-300 font-medium">ΊΝΣΤΑΓΚΡΑΜ</h4>
+                    </div>
+                    <div class="iconn flex items-center flex-wrap justify-center sm:justify-start">
+                        <!-- Twitter -->
+                        <div
+                            class="icon-wrraper h-14 w-14 p-4 rounded-full bg-[#00acee] mr-3 cursor-pointer hover:-translate-y-3 duration-1000 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class=" text-blue-50 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </div>
+
+
+                        <!-- instagram -->
+
+                        <div
+                            class="icon-wrraper h-14 w-14 p-4 rounded-full bg-[#cc2366] mr-3 cursor-pointer hover:-translate-y-3 duration-1000 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class=" text-blue-50 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </div>
+
+                        <!-- Facebook -->
+
+                        <div
+                            class="icon-wrraper h-14 w-14 p-4 rounded-full bg-[#3b5998] mr-3 cursor-pointer hover:-translate-y-3 duration-1000 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-50 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                            </svg>
+                        </div>
+
+                        <!-- Youtube -->
+
+                        <div
+                            class="icon-wrraper h-14 w-14 p-4 rounded-full bg-[#CD201F] cursor-pointer hover:-translate-y-3 duration-1000 overflow-hidden mb-4 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-50 w-6" fill="currentColor"
+                                viewBox="0 0 24 24 text-blue-50">
+                                <path
+                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+    <!-- footer -->
+
+
+    <!-- loder -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        function onToggleMenu(e) {
+            const navLinks = document.querySelector('.nav-links')
+            e.name = e.name === 'close' ? 'menu' : 'close'
+            navLinks.classList.toggle('top-[12%]')
+        }
+    </script>
+
+    <script>
+        $(function () {
+            var e = $("body");
+            $(window).scroll(function () {
+                $(window).scrollTop() >= 1 ? e.removeClass("body").addClass("darkHeader") : e.removeClass("darkHeader").addClass("body");
+            });
+        })
+    </script>
+</body>
+
+</html>
